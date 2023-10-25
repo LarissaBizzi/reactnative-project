@@ -5,8 +5,9 @@ export default function LittleLemonHeader() {
     <View style={{ flex: 0.15, backgroundColor: '#F4CE14' }}>
       <Text
         style={{
-          padding: 40,
+          padding: 60,
           fontSize: 30,
+          fontWeight: 'bold',
           color: 'black',
           textAlign: 'center',
         }}>

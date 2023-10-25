@@ -13,7 +13,7 @@ export default function LittleLemonFooter() {
               color: 'black',
               textAlign: 'center',
             }}>
-            All rights reserved by Little Lemon, 2022{' '}
+            All rights reserved by <Text style={{ fontWeight:'bold' }}>Little Lemon</Text>, 2022{' '}
           </Text>
         </View>
       );
