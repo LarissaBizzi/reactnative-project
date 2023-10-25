@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { View, Text } from 'react-native';
 
 export default function WelcomeScreen() {
@@ -24,7 +23,7 @@ export default function WelcomeScreen() {
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment. We would love
         to hear your experience with us!
-      </Text>
+        </Text>
     </View>
   );
 }
