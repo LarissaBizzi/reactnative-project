@@ -5,7 +5,7 @@ export default function LittleLemonFooter() {
         <View
           style={footerStyles.container}>
           <Text
-            style={footerStyles.headerText}>
+            style={footerStyles.footerText}>
             All rights reserved by <Text style={footerStyles.innerText}>Little Lemon</Text>, 2022{' '}
           </Text>
         </View>
@@ -15,9 +15,9 @@ export default function LittleLemonFooter() {
 const footerStyles = StyleSheet.create ({
   container: {
     backgroundColor: '#F4CE14',
-    marginBottom: 10,
+    marginBottom: 20,
   },
-  headerText: {
+  footerText: {
     fontSize: 18,
     color: 'black',
     textAlign: 'center',

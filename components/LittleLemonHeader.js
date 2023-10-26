@@ -17,7 +17,7 @@ const headerStyles = StyleSheet.create( {
     backgroundColor: '#F4CE14'
   },
   headerText: {
-    padding: 60,
+    padding: 40,
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
