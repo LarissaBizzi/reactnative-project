@@ -5,3 +5,5 @@
 2. Addition of a WelcomeScreen js file, also with View and Text. The styles are accordingly to the Little Lemon restaurant design.
 
 3. New component: MenuItem.js, with the using of ScrollView (a core component) for the menu list.
+
+4. Now I start using stylesheetAPI in all my JS files, to help abstract the component styles and allow to give meaningful names to each style, thus making the component readable and clean.
