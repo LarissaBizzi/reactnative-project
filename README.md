@@ -8,4 +8,6 @@
 
 4. Now I start using stylesheetAPI in all my JS files, to help abstract the component styles and allow to give meaningful names to each style, thus making the component readable and clean.
 
-5. Replacing the ScrollView component with the built-in React Native FlatList component, to improve performance with large lists. The lazy rendering approach is used by the FlatList component to render large lists efficiently.
+5. Replacing the ScrollView component with the built-in React Native FlatList component, to improve performance with large lists. The lazy rendering approach is used by the FlatList component to render large lists efficiently. Exploring some flat list properties.
+
+6. It is time to use the SectionList, a built in react native component, that combines the FlatList features with section support, rendering section headers.
