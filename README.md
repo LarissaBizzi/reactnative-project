@@ -11,3 +11,5 @@
 5. Replacing the ScrollView component with the built-in React Native FlatList component, to improve performance with large lists. The lazy rendering approach is used by the FlatList component to render large lists efficiently. Exploring some flat list properties.
 
 6. It is time to use the SectionList, a built in react native component, that combines the FlatList features with section support, rendering section headers.
+
+7. Adding feedback form, using the TextInput core react native component, with the following props: style, onChangeText, placeholder. I am commenting the other components in my App.js because I want to see the result of this new one and I do not know yet how to use routing in React Native.
