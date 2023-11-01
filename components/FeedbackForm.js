@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
+import { Text, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView, Platform, Alert } from 'react-native';
 
 export default function FeedbackForm() {
     const [firstName, onChangeFirstName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
+    const [phoneNumber, onChangePhoneNumber] = React.useState('');
     const [message, onChangeMessage] = React.useState('');
 
     return (
@@ -17,9 +18,33 @@ export default function FeedbackForm() {
             <Text style={styles.infoSection}>
                 We would love to hear your experience with us!
             </Text>
-            <TextInput value={firstName} onChangeText={onChangeFirstName} style={styles.input} placeholder='first name' />
-            <TextInput value={lastName} onChangeText={onChangeLastName} style={styles.input} placeholder='last name' />
-            <TextInput value={message} onChangeText={onChangeMessage} style={styles.messageInput} placeholder='enter your message' />
+            <TextInput
+                value={firstName}
+                onChangeText={onChangeFirstName}
+                style={styles.input}
+                placeholder='first name'
+                onFocus={() => Alert.alert("First name is focused")}
+                clearButtonMode='always' />
+            <TextInput
+                value={lastName}
+                onChangeText={onChangeLastName}
+                style={styles.input}
+                placeholder='last name'
+                clearButtonMode='always' />
+            <TextInput
+                value={phoneNumber}
+                onChangeText={onChangePhoneNumber}
+                style={styles.input}
+                placeholder='Phone Number'
+                keyboardType='phone-pad' />
+            <TextInput
+                value={message}
+                onChangeText={onChangeMessage}
+                style={styles.messageInput}
+                placeholder='Please leave feedback'
+                multiline={false}
+                maxLength={250}
+                clearButtonMode='always' />
         </ScrollView>
         </KeyboardAvoidingView>
     );

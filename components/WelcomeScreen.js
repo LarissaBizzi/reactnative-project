@@ -10,8 +10,7 @@ export default function WelcomeScreen() {
       <Text
         style={welcomescreenStyles.regularText}>
         Little Lemon is a charming neighborhood bistro that serves simple food
-        and classic cocktails in a lively but casual environment. We would love
-        to hear your experience with us!
+        and classic cocktails in a lively but casual environment.
         </Text>
     </View>
   );

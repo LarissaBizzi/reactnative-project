@@ -12,4 +12,8 @@
 
 6. It is time to use the SectionList, a built in react native component, that combines the FlatList features with section support, rendering section headers.
 
-7. Adding feedback form, using the TextInput core react native component, with the following props: style, onChangeText, placeholder. I am commenting the other components in my App.js because I want to see the result of this new one and I do not know yet how to use routing in React Native.
+7. Adding feedback form, using the TextInput core react native component, with some props like style, onChangeText, placeholder etc. I am commenting the other components in my App.js because I want to see the result of this new one and I do not know yet how to use routing in React Native.
+
+8. I build a simple login page for the Little Lemon app, creating an email address and password text input box and allowing the user to enter the requested information. The feedback form is in comments this time.
+
+9.
