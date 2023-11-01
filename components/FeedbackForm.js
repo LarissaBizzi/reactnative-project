@@ -23,7 +23,7 @@ export default function FeedbackForm() {
                 onChangeText={onChangeFirstName}
                 style={styles.input}
                 placeholder='first name'
-                onFocus={() => Alert.alert("First name is focused")}
+                onFocus={() => Alert.alert("First name is focussed")}
                 clearButtonMode='always' />
             <TextInput
                 value={lastName}
