@@ -1,13 +1,18 @@
 import * as React from 'react';
-import { ScrollView, Text, StyleSheet, TextInput } from 'react-native';
+import { useState } from 'react';
+import { ScrollView, Text, StyleSheet, TextInput, Pressable } from 'react-native';
 
 export default function LoginScreen() {
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
+    const [loggedIn, onLogin] = useState(false);
 
     return (
     <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
+      {loggedIn && <Text style={styles.headerText}>You are logged in!</Text>}
+      {!loggedIn && (
+      <>
       <Text style={styles.regularText}>Login to continue </Text>
       <TextInput
         value={email}
@@ -24,6 +29,13 @@ export default function LoginScreen() {
         placeholder='password'
         keyboardType={'default'}
         clearButtonMode='always' />
+      <Pressable
+        onPress={() => onLogin(!loggedIn)}
+        style={styles.button}>
+         <Text style={styles.buttonText}>Log in</Text>
+        </Pressable>
+    </>
+    )}
     </ScrollView>
   );
 }
@@ -53,5 +65,20 @@ inputBox: {
     fontSize: 16,
     borderColor: '#EDEFEE',
     backgroundColor: '#EDEFEE',
+},
+button: {
+  fontSize: 22,
+  padding: 10,
+  marginVertical: 8,
+  margin: 100,
+  backgroundColor: '#F4CE14',
+  borderColor: '#F4CE14',
+  borderWidth: 2,
+  borderRadius: 50,
+},
+buttonText: {
+  color: 'black',
+  textAlign: 'center',
+  fontSize: 25,
 },
 });

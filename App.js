@@ -14,10 +14,10 @@ export default function App() {
       <View
         style={appStyles.container}>
         <LittleLemonHeader />
-        {/* <LoginScreen /> */}
+        <LoginScreen />
         {/* <FeedbackForm /> */}
-        <WelcomeScreen />
-        <MenuItems />
+        {/* <WelcomeScreen /> */}
+        {/* <MenuItems /> */}
       </View>
       <View style={appStyles.footerContainer}>
         <LittleLemonFooter />
