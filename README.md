@@ -17,3 +17,5 @@
 8. I build a simple login page for the Little Lemon app, creating an email address and password text input box and allowing the user to enter the requested information. The feedback form is in comments this time.
 
 9. Including pressable component, to detect various stages of press interactions. It comes with some in built methods, comme onPressIn (press activated) and onPressOut (press deactivated) and can manage time and area. Another useful method added is HitRect, that defines pressable range for an element. I am applying this component in the login screen as a log in button and in the menu items page as a view menu button.
+
+10. Render images, using image component. First I import the images into my project. Then I use the image component with some props for adding accessibility features, for example, and also apply some styling options.

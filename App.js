@@ -6,7 +6,7 @@ import LittleLemonFooter from './components/LittleLemonFooter';
 import LoginScreen from './components/LoginScreen';
 import WelcomeScreen from "./components/WelcomeScreen";
 import MenuItems from './components/MenuItems';
-// import FeedbackForm from './components/FeedbackForm';
+import FeedbackForm from './components/FeedbackForm';
 
 export default function App() {
   return (
@@ -14,9 +14,9 @@ export default function App() {
       <View
         style={appStyles.container}>
         <LittleLemonHeader />
-        <LoginScreen />
+        {/* <LoginScreen /> */}
         {/* <FeedbackForm /> */}
-        {/* <WelcomeScreen /> */}
+        <WelcomeScreen />
         {/* <MenuItems /> */}
       </View>
       <View style={appStyles.footerContainer}>
@@ -29,7 +29,7 @@ export default function App() {
 const appStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#495E57',
+    backgroundColor: '#333333',
   },
   footerContainer: {
     backgroundColor: '#495E57'
