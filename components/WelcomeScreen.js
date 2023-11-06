@@ -1,8 +1,16 @@
-import { ScrollView, View, Text, StyleSheet, Image } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Image, useColorScheme, useWindowDimensions } from 'react-native';
 
 export default function WelcomeScreen() {
+  const {width, height, fontScale} = useWindowDimensions();
+  const colorScheme = useColorScheme();
   return (
-    <ScrollView style={welcomescreenStyles.container}>
+    <ScrollView
+    style={[
+      welcomescreenStyles.container,
+      colorScheme === 'light'
+        ? { backgroundColor: '#fff' }
+        : { backgroundColor: '#333333' },
+    ]}>
       <View style={welcomescreenStyles.headerWrapper}>
       <Image
         resizeMode={'cover'}
@@ -12,12 +20,21 @@ export default function WelcomeScreen() {
         accessibilityLabel='Little Lemon logo'
       />
       <Text
-        style={welcomescreenStyles.headerText}>
-        Little Lemon
-      </Text>
+          style={[
+            welcomescreenStyles.headerText,
+            colorScheme === 'light'
+              ? { color: '#333333' }
+              : { color: '#EDEFEE' },
+          ]}>
+          Little Lemon
+        </Text>
       </View>
+      <Text style={welcomescreenStyles.regular}>Color Scheme: {colorScheme}</Text>
       <Text
-        style={welcomescreenStyles.regularText}>
+        style={[
+          welcomescreenStyles.regularText,
+          colorScheme === 'light' ? { color: '#333333' } : { color: '#EDEFEE' },
+        ]}>
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment.
         </Text>
@@ -51,13 +68,21 @@ export default function WelcomeScreen() {
         accessibilityLabel='A dish of mussels with a slice of lemon'
       />
       </View>
+      <Text style={welcomescreenStyles.regular}>Window Dimensions:</Text>
+      <Text style={welcomescreenStyles.regular}>Height: {height}</Text>
+      <Text style={welcomescreenStyles.regular}>Width: {width}</Text>
+      <Text style={welcomescreenStyles.regular}>Font Scale: {fontScale}</Text>
     </ScrollView>
   );
 }
 
 const welcomescreenStyles = StyleSheet.create({
     container: {
-      flex: 1
+      flex: 1,
+    },
+    regular: {
+      fontSize: 18,
+      textAlign: 'center',
     },
     headerWrapper: {
       flexDirection: 'row',
