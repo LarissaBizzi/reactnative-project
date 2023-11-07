@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View } from 'react-native';
 
 import LittleLemonHeader from './components/LittleLemonHeader';
@@ -8,21 +10,30 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import MenuItems from './components/MenuItems';
 import FeedbackForm from './components/FeedbackForm';
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
     <>
-      <View
+    <NavigationContainer>
+    <View
         style={appStyles.container}>
         <LittleLemonHeader />
-        {/* <LoginScreen /> */}
-        {/* <FeedbackForm /> */}
-        <WelcomeScreen />
-        {/* <MenuItems /> */}
+        <Stack.Navigator initialRouteName="welcome" screenOptions={{ headerStyle: { backgroundColor: "gray" } }}>
+        <Stack.Screen
+          options={{ title: "Home" }}
+          name="welcome"
+          component={WelcomeScreen} />
+        <Stack.Screen name="login" component={LoginScreen} />
+        <Stack.Screen name="feedback" component={FeedbackForm} />
+        <Stack.Screen name="menu" component={MenuItems} />
+        </Stack.Navigator>
       </View>
       <View style={appStyles.footerContainer}>
         <LittleLemonFooter />
       </View>
-    </>
+    </NavigationContainer>
+   </>
   );
 }
 

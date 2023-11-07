@@ -21,3 +21,5 @@
 10. Render images, using image component. First I import the images into my project. Then I use the image component with some props for adding accessibility features, for example, and also apply some styling options.
 
 11. Using useColorScheme hook, that provides and subscribes color schemes updates from the the appearance module in React Native. I also add the useWindowDimensions hook, that retrieve information about windows height and width values, as well as the font scale.
+
+12. Applying React Navigation, the most popular navigation library for React Native apps. I also use the stack navigator, that provides a way to transition between screens (to be continued), shows a header title for a screen, defines a initial root of the navigator and uses the screen options to define a background color for the header.

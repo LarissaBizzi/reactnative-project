@@ -29,7 +29,8 @@ export default function WelcomeScreen() {
           Little Lemon
         </Text>
       </View>
-      <Text style={welcomescreenStyles.regular}>Color Scheme: {colorScheme}</Text>
+      {/* If you want to see the color scheme of the screen: */}
+      {/* <Text style={welcomescreenStyles.regular}>Color Scheme: {colorScheme}</Text> */}
       <Text
         style={[
           welcomescreenStyles.regularText,
@@ -68,10 +69,11 @@ export default function WelcomeScreen() {
         accessibilityLabel='A dish of mussels with a slice of lemon'
       />
       </View>
+      {/* If you want to see window dimensions and font scale:
       <Text style={welcomescreenStyles.regular}>Window Dimensions:</Text>
       <Text style={welcomescreenStyles.regular}>Height: {height}</Text>
       <Text style={welcomescreenStyles.regular}>Width: {width}</Text>
-      <Text style={welcomescreenStyles.regular}>Font Scale: {fontScale}</Text>
+      <Text style={welcomescreenStyles.regular}>Font Scale: {fontScale}</Text> */}
     </ScrollView>
   );
 }
