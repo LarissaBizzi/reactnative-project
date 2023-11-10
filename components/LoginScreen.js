@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { ScrollView, Text, StyleSheet, TextInput, Pressable } from 'react-native';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
     const [email, onChangeEmail] = React.useState('');
     const [password, onChangePassword] = React.useState('');
     const [loggedIn, onLogin] = useState(false);
@@ -10,8 +10,8 @@ export default function LoginScreen() {
     return (
     <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
-      {loggedIn && <Text style={styles.headerText}>You are logged in!</Text>}
-      {!loggedIn && (
+      {/* {loggedIn && <Text style={styles.headerText}>You are logged in!</Text>}
+      {!loggedIn && ( */}
       <>
       <Text style={styles.regularText}>Login to continue </Text>
       <TextInput
@@ -30,12 +30,13 @@ export default function LoginScreen() {
         keyboardType={'default'}
         clearButtonMode='always' />
       <Pressable
-        onPress={() => onLogin(!loggedIn)}
+        onPress={() => navigation.navigate("Welcome")}
+        // onPress={() => onLogin(!loggedIn)}
         style={styles.button}>
          <Text style={styles.buttonText}>Log in</Text>
         </Pressable>
     </>
-    )}
+    {/* )} */}
     </ScrollView>
   );
 }
@@ -46,15 +47,16 @@ container: {
   },
 headerText: {
     padding: 40,
-    fontSize: 30,
-    color: '#EDEFEE',
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#495E57',
     textAlign: 'center',
 },
 regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: '#EDEFEE',
+    color: '#495E57',
     textAlign: 'center',
 },
 inputBox: {

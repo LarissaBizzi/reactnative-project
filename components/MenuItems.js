@@ -58,7 +58,7 @@ const Item = ({ name, price }) => (
   </View>
 );
 
-const MenuItems = () => {
+const MenuItems = ({navigation}) => {
 
   const [showMenu, setshowMenu] = useState(false);
 
@@ -93,6 +93,9 @@ const MenuItems = () => {
         ItemSeparatorComponent={Separator}
         />
       )}
+      <Pressable onPress={() => navigation.goBack()}>
+        <Text style={menuStyles.buttonText}>Go back</Text>
+      </Pressable>
       </View>
     )
 };
@@ -110,7 +113,7 @@ const menuStyles = StyleSheet.create({
         justifyContent: 'space-between',
       },
       itemText: {
-        color: '#F4CE14',
+        color: '#495E57',
         fontSize: 20,
       },
       headerStyle: {
@@ -146,7 +149,7 @@ const menuStyles = StyleSheet.create({
         backgroundColor: '#495E57',
       },
       separator: {
-        borderBottomWidth: 1,
-        borderColor: '#EDEFEE',
+        borderBottomWidth: 5,
+        borderColor: '#495E57',
       }
 });

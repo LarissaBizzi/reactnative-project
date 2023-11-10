@@ -1,6 +1,6 @@
-import { ScrollView, View, Text, StyleSheet, Image, useColorScheme, useWindowDimensions } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, Image, useColorScheme, useWindowDimensions, Pressable } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
   const {width, height, fontScale} = useWindowDimensions();
   const colorScheme = useColorScheme();
   return (
@@ -39,6 +39,9 @@ export default function WelcomeScreen() {
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment.
         </Text>
+        <Pressable onPress={() => navigation.navigate("Menu")}>
+          <Text style={welcomescreenStyles.buttonText}>View Menu</Text>
+        </Pressable>
         <View style={welcomescreenStyles.imageWrapper}>
         <Image
         resizeMode={'cover'}
@@ -86,6 +89,12 @@ const welcomescreenStyles = StyleSheet.create({
       fontSize: 18,
       textAlign: 'center',
     },
+    buttonText: {
+    paddingBottom: 20,
+    fontSize: 18,
+    textAlign: 'center'
+    },
+
     headerWrapper: {
       flexDirection: 'row',
       justifyContent: 'center',

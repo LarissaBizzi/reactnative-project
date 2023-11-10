@@ -23,3 +23,7 @@
 11. Using useColorScheme hook, that provides and subscribes color schemes updates from the the appearance module in React Native. I also add the useWindowDimensions hook, that retrieve information about windows height and width values, as well as the font scale.
 
 12. Applying React Navigation, the most popular navigation library for React Native apps. I also use the stack navigator, that provides a way to transition between screens (to be continued), shows a header title for a screen, defines a initial root of the navigator and uses the screen options to define a background color for the header.
+
+13. Implementing navigation rules that allows the user to move back and forth the screens without getting lost. I use the navigation prop, a Stack Navigator prop passed to every screen component.
+
+14. Setting up tab navigation, using createBottomTabNavigator. Now the user can navigate easily between screens using the tab in the bottom of the screen, as you can see in the last screen shot added to the project.
