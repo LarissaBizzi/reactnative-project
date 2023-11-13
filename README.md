@@ -27,3 +27,5 @@
 13. Implementing navigation rules that allows the user to move back and forth the screens without getting lost. I use the navigation prop, a Stack Navigator prop passed to every screen component.
 
 14. Setting up tab navigation, using createBottomTabNavigator. Now the user can navigate easily between screens using the tab in the bottom of the screen, as you can see in the last screen shot added to the project.
+
+15. Using drawer navigation. I add a hamburger menu, with a drawer navigator and the drawer screens: Home, Login, Feedback and Menu.

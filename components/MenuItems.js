@@ -93,7 +93,7 @@ const MenuItems = ({navigation}) => {
         ItemSeparatorComponent={Separator}
         />
       )}
-      <Pressable onPress={() => navigation.goBack()}>
+      <Pressable onPress={() => navigation.goBack() }>
         <Text style={menuStyles.buttonText}>Go back</Text>
       </Pressable>
       </View>

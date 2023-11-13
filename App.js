@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+/* import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; */
+import { createDrawerNavigator } from '@react-navigation/drawer';
+// import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet, View } from 'react-native';
 // import LittleLemonHeader from './components/LittleLemonHeader';
 import LittleLemonFooter from './components/LittleLemonFooter';
@@ -12,7 +13,9 @@ import WelcomeScreen from "./components/WelcomeScreen";
 import MenuItems from './components/MenuItems';
 import FeedbackForm from './components/FeedbackForm';
 
-const Tab = createBottomTabNavigator();
+// const Tab = createBottomTabNavigator();
+
+const Drawer = createDrawerNavigator();
 
 function LogoTitle() {
   return (
@@ -31,7 +34,7 @@ export default function App() {
     <>
     <NavigationContainer>
     <View style={appStyles.container}>
-        <Tab.Navigator
+        {/* <Tab.Navigator
         initialRouteName="Login"
         screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
@@ -53,15 +56,20 @@ export default function App() {
         },
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
-      })}>
-        <Tab.Screen
+      })}> */}
+      <Drawer.Navigator
+          useLegacyImplementation
+          screenOptions={{ drawerPosition: 'left' }}
+          initialRouteName="Login">
+        <Drawer.Screen
           options={{ title: "Home", headerTitle: (props) => <LogoTitle {...props} /> }}
           name="Welcome"
           component={WelcomeScreen} />
-        <Tab.Screen name="Login" component={LoginScreen} />
-        <Tab.Screen name="Feedback" component={FeedbackForm} />
-        <Tab.Screen name="Menu" component={MenuItems} />
-        </Tab.Navigator>
+        <Drawer.Screen name="Login" component={LoginScreen} />
+        <Drawer.Screen name="Feedback" component={FeedbackForm} />
+        <Drawer.Screen name="Menu" component={MenuItems} />
+      </Drawer.Navigator>
+        {/* </Tab.Navigator> */}
       </View>
       <View style={appStyles.footerContainer}>
         <LittleLemonFooter />
