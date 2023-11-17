@@ -1,11 +1,12 @@
 import React from 'react';
-import { Text, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView, Platform, Alert } from 'react-native';
+import { Text, StyleSheet, TextInput, ScrollView, KeyboardAvoidingView, Platform, Alert, Pressable } from 'react-native';
 
 export default function FeedbackForm() {
     const [firstName, onChangeFirstName] = React.useState('');
     const [lastName, onChangeLastName] = React.useState('');
     const [phoneNumber, onChangePhoneNumber] = React.useState('');
     const [message, onChangeMessage] = React.useState('');
+
 
     return (
         <KeyboardAvoidingView
@@ -45,6 +46,11 @@ export default function FeedbackForm() {
                 multiline={false}
                 maxLength={250}
                 clearButtonMode='always' />
+            <Pressable
+                onPress={() => {Alert.alert('Thank you for your feedback!')}}
+                style={styles.button}>
+            <Text style={styles.buttonText}>Submit</Text>
+            </Pressable>
         </ScrollView>
         </KeyboardAvoidingView>
     );
@@ -63,7 +69,7 @@ const styles = StyleSheet.create({
        padding: 10,
        fontSize: 16,
        borderColor: 'EDEFEE',
-       backgroundColor: '#F4CE14'
+       backgroundColor: 'white'
     },
 
     messageInput: {
@@ -72,7 +78,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 10,
         fontSize: 16,
-        backgroundColor: '#F4CE14',
+        backgroundColor: 'white',
       },
 
     infoSection: {
@@ -91,5 +97,20 @@ const styles = StyleSheet.create({
         color: '#EDEFEE',
         textAlign: 'center',
         backgroundColor: '#495E57'
-    }
+    },
+    button: {
+        fontSize: 22,
+        padding: 10,
+        marginVertical: 8,
+        margin: 100,
+        backgroundColor: '#F4CE14',
+        borderColor: '#F4CE14',
+        borderWidth: 2,
+        borderRadius: 50,
+     },
+     buttonText: {
+       color: 'black',
+       textAlign: 'center',
+       fontSize: 25,
+     },
 });

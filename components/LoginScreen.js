@@ -1,11 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { ScrollView, Text, StyleSheet, TextInput, Pressable } from 'react-native';
+import { validateEmail } from '../utils/validateEmail';
 
 export default function LoginScreen({navigation}) {
-    const [email, onChangeEmail] = React.useState('');
-    const [password, onChangePassword] = React.useState('');
+    const [email, onChangeEmail] = useState('');
+    const [password, onChangePassword] = useState('');
     const [loggedIn, onLogin] = useState(false);
+    const validEmail = validateEmail(email);
 
     return (
     <ScrollView style={styles.container}>
@@ -16,7 +18,7 @@ export default function LoginScreen({navigation}) {
       <Text style={styles.regularText}>Login to continue </Text>
       <TextInput
         value={email}
-        onChangeText={onChangeEmail}
+        onChangeText={(text) => onChangeEmail(text)}
         style={styles.inputBox}
         placeholder='email'
         keyboardType={'email-address'}
@@ -31,6 +33,7 @@ export default function LoginScreen({navigation}) {
         clearButtonMode='always' />
       <Pressable
         onPress={() => navigation.navigate("Welcome")}
+        disabled={!validEmail}
         // onPress={() => onLogin(!loggedIn)}
         style={styles.button}>
          <Text style={styles.buttonText}>Log in</Text>

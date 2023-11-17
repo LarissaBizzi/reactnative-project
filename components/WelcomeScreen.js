@@ -3,6 +3,7 @@ import { ScrollView, View, Text, StyleSheet, Image, useColorScheme, useWindowDim
 export default function WelcomeScreen({navigation}) {
   const {width, height, fontScale} = useWindowDimensions();
   const colorScheme = useColorScheme();
+
   return (
     <ScrollView
     style={[
@@ -39,7 +40,9 @@ export default function WelcomeScreen({navigation}) {
         Little Lemon is a charming neighborhood bistro that serves simple food
         and classic cocktails in a lively but casual environment.
         </Text>
-        <Pressable onPress={() => navigation.navigate("Menu")}>
+        <Pressable
+          onPress={() => navigation.navigate("Menu")}
+        >
           <Text style={welcomescreenStyles.buttonText}>View Menu</Text>
         </Pressable>
         <View style={welcomescreenStyles.imageWrapper}>
