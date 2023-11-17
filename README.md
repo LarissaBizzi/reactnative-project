@@ -1,4 +1,4 @@
-# React Native development - exercises
+# React Native development
 
 1. The time to practice the View and Text elements. First commit creating the LittleLemonFooter and LittleLemonHeader, updating the code using these two core components and adding some styling properties in them.
 
@@ -28,4 +28,6 @@
 
 14. Setting up tab navigation, using createBottomTabNavigator. Now the user can navigate easily between screens using the tab in the bottom of the screen, as you can see in the last screen shot added to the project.
 
-15. Using drawer navigation. I add a hamburger menu, with a drawer navigator and the drawer screens: Home, Login, Feedback and Menu.
+15. I am adding a pressable component in the feedback form and a email validation in the login screen.
+
+16. Using drawer navigation. I add a hamburger menu, with a drawer navigator and the drawer screens: Home, Login, Feedback and Menu.
